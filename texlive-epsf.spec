@@ -1,3 +1,9 @@
+# revision 21461
+# category Package
+# catalog-ctan /macros/generic/epsf
+# catalog-date 2011-02-18 10:32:12 +0100
+# catalog-license pd
+# catalog-version 2.7.4
 Name:		texlive-epsf
 Version:	2.7.4
 Release:	1
@@ -58,6 +64,7 @@ version, or through the support offered by etex).
 %doc %{_texmfdistdir}/doc/generic/epsf/tepsf1.tex
 %doc %{_texmfdistdir}/doc/generic/epsf/tepsf2.ltx
 %doc %{_texmfdistdir}/doc/generic/epsf/tepsf3.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -68,3 +75,5 @@ version, or through the support offered by etex).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
