@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The original graphics inclusion macros for use with dvips;
@@ -28,20 +26,12 @@ sophisticated standard LaTeX graphics bundle of packages (which
 are also available to Plain TeX users, either via its Plain TeX
 version, or through the support offered by etex).
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -65,7 +55,6 @@ version, or through the support offered by etex).
 %doc %{_texmfdistdir}/doc/generic/epsf/tepsf1.tex
 %doc %{_texmfdistdir}/doc/generic/epsf/tepsf2.ltx
 %doc %{_texmfdistdir}/doc/generic/epsf/tepsf3.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -76,5 +65,3 @@ version, or through the support offered by etex).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
