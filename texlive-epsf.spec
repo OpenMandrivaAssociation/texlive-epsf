@@ -6,7 +6,7 @@
 # catalog-version 2.7.4
 Name:		texlive-epsf
 Version:	2.7.4
-Release:	4
+Release:	5
 Summary:	Simple macros for EPS inclusion
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/epsf
