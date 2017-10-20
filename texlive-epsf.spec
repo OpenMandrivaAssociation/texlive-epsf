@@ -6,7 +6,7 @@
 # catalog-version 2.7.4
 Name:		texlive-epsf
 Version:	2.7.4
-Release:	10
+Release:	11
 Summary:	Simple macros for EPS inclusion
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/epsf
@@ -27,12 +27,14 @@ are also available to Plain TeX users, either via its Plain TeX
 version, or through the support offered by etex).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
+%{_bindir}/texhash
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+	%{_bindir}/texhash
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -65,17 +67,3 @@ version, or through the support offered by etex).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.7.4-2
-+ Revision: 751497
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.7.4-1
-+ Revision: 718349
-- texlive-epsf
-- texlive-epsf
-- texlive-epsf
-- texlive-epsf
-
