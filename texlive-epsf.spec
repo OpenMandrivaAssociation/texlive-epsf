@@ -1,18 +1,12 @@
-# revision 21461
-# category Package
-# catalog-ctan /macros/generic/epsf
-# catalog-date 2011-02-18 10:32:12 +0100
-# catalog-license pd
-# catalog-version 2.7.4
 Name:		texlive-epsf
-Version:	2.7.4
-Release:	12
+Version:	21461
+Release:	1
 Summary:	Simple macros for EPS inclusion
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/generic/epsf
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epsf.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epsf.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epsf.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epsf.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -60,7 +54,7 @@ fi
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
