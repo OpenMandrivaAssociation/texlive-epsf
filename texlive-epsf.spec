@@ -3,7 +3,7 @@ Version:	21461
 Release:	2
 Summary:	Simple macros for EPS inclusion
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/generic/epsf
+URL:		https://www.ctan.org/tex-archive/macros/generic/epsf
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epsf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/epsf.doc.r%{version}.tar.xz
