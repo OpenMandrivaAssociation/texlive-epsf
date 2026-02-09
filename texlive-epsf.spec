@@ -1,6 +1,6 @@
 Name:		texlive-epsf
-Version:	21461
-Release:	2
+Version:	77677
+Release:	1
 Summary:	Simple macros for EPS inclusion
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/generic/epsf
